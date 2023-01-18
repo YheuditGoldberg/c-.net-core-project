@@ -1,0 +1,7 @@
+C:\Users\1\Desktop\י''ד\core\08-11-2022\hw\obj\Debug\net5.0\hw.csproj.AssemblyReference.cache
+C:\Users\1\Desktop\י''ד\core\08-11-2022\hw\obj\Debug\net5.0\hw.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\Desktop\י''ד\core\08-11-2022\hw\obj\Debug\net5.0\hw.AssemblyInfoInputs.cache
+C:\Users\1\Desktop\י''ד\core\08-11-2022\hw\obj\Debug\net5.0\hw.AssemblyInfo.cs
+C:\Users\1\Desktop\י''ד\core\08-11-2022\hw\obj\Debug\net5.0\hw.csproj.CoreCompileInputs.cache
+C:\Users\1\Desktop\י''ד\core\08-11-2022\hw\obj\Debug\net5.0\hw.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\1\Desktop\י''ד\core\08-11-2022\hw\obj\Debug\net5.0\hw.MvcApplicationPartsAssemblyInfo.cache

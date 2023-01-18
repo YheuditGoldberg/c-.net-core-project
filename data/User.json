@@ -1,0 +1,32 @@
+[
+    {
+        "Id": 3,
+        "Name": "gili",
+        "IsAdmin": true
+    },
+    {
+        "Id": 4,
+        "Name": "string",
+        "IsAdmin": false
+    },
+    {
+        "Id": 3,
+        "Name": "pp",
+        "IsAdmin": false
+    },
+    {
+        "Id": 4,
+        "Name": "tamar",
+        "IsAdmin": false
+    },
+    {
+        "Id": 5,
+        "Name": "vd",
+        "IsAdmin": true
+    },
+    {
+        "Id": 6,
+        "Name": "string",
+        "IsAdmin": true
+    }
+]

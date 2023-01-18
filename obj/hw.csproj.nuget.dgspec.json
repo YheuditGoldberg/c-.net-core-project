@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\1\\Desktop\\י''ד\\core\\08-11-2022\\hw\\hw.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\1\\Desktop\\י''ד\\core\\08-11-2022\\hw\\hw.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\1\\Desktop\\י''ד\\core\\08-11-2022\\hw\\hw.csproj",
+        "projectName": "hw",
+        "projectPath": "C:\\Users\\1\\Desktop\\י''ד\\core\\08-11-2022\\hw\\hw.csproj",
+        "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\1\\Desktop\\י''ד\\core\\08-11-2022\\hw\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net60"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net60": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net60": {
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
