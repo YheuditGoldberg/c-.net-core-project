@@ -1,15 +1,28 @@
 using Microsoft.AspNetCore.Mvc;
-using User.Interfaces;
+using Task.Interfaces;
 using User.Models;
+using Task.Models;
 using System.Security.Claims;
 using Task.Services;
+using System.Collections.Generic;
+using System.Linq;
+using System;
+using System.Text.Json;
+using System.Text;
+
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+
 namespace User.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    // [Route("/user")]
+    [Route("User")]
     public class UserController : ControllerBase
     {
-        IUserService UserService;
+        private IUserService UserService;
+         private ITokenService VTokenService;
+        private static user CurrentUser;
         public UserController(IUserService UserService)
         {
             this.UserService = UserService;
@@ -32,22 +45,57 @@ namespace User.Controllers
         [Route("[action]")]
         public ActionResult<String> Login([FromBody] user User)
         {
-            var claims = new List<Claim>();
-            user login = UserService.Get(User.Id);
-            if (login.IsAdmin)
+                 var dt = DateTime.Now;
+
+            if (User.Name != "Admin" || User.Password != "123")
             {
-                claims.Add(
-                    new Claim("type", "Admin")
-                );
+                CurrentUser = UserService.IsExist(User);
+                if(CurrentUser == null)
+                {
+                    return Unauthorized();
+                }
+                var claims = new List<Claim> {
+                    new Claim("type", "User"),
+                    new Claim("Id", CurrentUser.Id.ToString())
+                };
+
+                var token = VTokenService.GetToken(claims);
+
+                return new OkObjectResult(VTokenService.WriteToken(token));                      
             }
-            if (!login.IsAdmin)
+
+            else
             {
-                claims.Add(
-                    new Claim("type", "User")
-                );
+                var claims = new List<Claim> {
+                    new Claim("type", "Admin"),
+                    new Claim("Id", "0") 
+                };
+
+                CurrentUser = new user();
+                CurrentUser.Id = 0;
+                CurrentUser.Name = "Admin";
+                CurrentUser.Password = "123";
+
+                var token = VTokenService.GetToken(claims);
+
+                return new OkObjectResult(VTokenService.WriteToken(token));
             }
-            var token = TokenService.GetToken(claims);
-            return new OkObjectResult(TokenService.WriteToken(token));
+            // var claims = new List<Claim>();
+            // user login = UserService.Get(User.Id);
+            // if (login.IsAdmin)
+            // {
+            //     claims.Add(
+            //         new Claim("type", "Admin")
+            //     );
+            // }
+            // else
+            // {
+            //     claims.Add(
+            //         new Claim("type", "User")
+            //     );
+            // }
+            // var token = TokenService.GetToken(claims);
+            // return new OkObjectResult(TokenService.WriteToken(token));
 
             // var dt = DateTime.Now;
 

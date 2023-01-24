@@ -23,6 +23,7 @@ namespace Task.Controllers
             this.TaskService = TaskService;
         }
         [HttpGet]
+        // [Authorize(policy = "Admin")]
         public ActionResult<List<task>> GetAll() =>
               TaskService.GetAll();
 

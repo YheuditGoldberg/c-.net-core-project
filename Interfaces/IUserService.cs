@@ -1,7 +1,7 @@
 using User.Models;
 using System.Collections.Generic;
 
-namespace User.Interfaces
+namespace Task.Interfaces
 {
     public interface IUserService
     {
@@ -10,6 +10,8 @@ namespace User.Interfaces
         void Add(user myUser);
         void Delete(int id);
         void Update(user myUser);
+        user IsExist(user user);
+
         int Count {get;}
     }
 }

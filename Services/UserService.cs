@@ -3,7 +3,7 @@
 // using Task.Models;
 // ///
 using User.Models;
-using User.Interfaces;
+using Task.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
@@ -12,7 +12,7 @@ using System.Net;
 using System.Text.Json;
 using Microsoft.AspNetCore.Hosting;
 
-namespace User.Services
+namespace Task.Services
 {
     public class UserService : IUserService
     {
@@ -64,6 +64,10 @@ namespace User.Services
 
         }
         public int Count => Users.Count();
-
+        public user IsExist(user user) 
+        {
+            return(Users.FirstOrDefault(u => u.Name == user.Name && u.Password == user.Password));
+        }
     }
+   
 }

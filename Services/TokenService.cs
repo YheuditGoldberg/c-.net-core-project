@@ -6,15 +6,17 @@ using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Task.Interfaces;
 
 
 namespace Task.Services
 {
-    public static class TokenService
+    public class TokenService //: ITokenService
     {
         private static SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ"));
         private static string issuer = "https://fbi-demo.com";
-        public static SecurityToken GetToken(List<Claim> claims) =>
+
+        public SecurityToken GetToken(List<Claim> claims) =>
             new JwtSecurityToken(
                 issuer,
                 issuer,
@@ -23,7 +25,7 @@ namespace Task.Services
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
             );
 
-        public static TokenValidationParameters GetTokenValidationParameters() =>
+        public TokenValidationParameters GetTokenValidationParameters() =>
             new TokenValidationParameters
             {
                 ValidIssuer = issuer,
@@ -32,7 +34,7 @@ namespace Task.Services
                 ClockSkew = TimeSpan.Zero // remove delay of token when expire
             };
 
-        public static string WriteToken(SecurityToken token) =>
+        public string WriteToken(SecurityToken token) =>
             new JwtSecurityTokenHandler().WriteToken(token);
     }
 }
