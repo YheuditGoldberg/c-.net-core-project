@@ -17,8 +17,18 @@ namespace Task.Services
     public class TaskService:ITaskService
     {
         List<task> Taskas { get; }
+        static int count=0;
+        private  void getmaxvalue(){
+        int max=0;
+        foreach(var i in Taskas){
+        if(i.IdTask>max)
+        max=i.IdTask;
+        }
+          count=max+1;
+        }
         private IWebHostEnvironment  webHost;
         private string filePath;
+        private int userID;
         public TaskService(IWebHostEnvironment webHost)
         {
             this.webHost = webHost;
@@ -37,11 +47,21 @@ namespace Task.Services
         {
             File.WriteAllText(filePath, JsonSerializer.Serialize(Taskas));
         }
-        public  List<task> GetAll() => Taskas;
-        public  task Get(int id) => Taskas.FirstOrDefault(p => p.Id == id );
+        public  List<task> GetAll(int userId ) {
+            if(userId ==0)
+            return Taskas.ToList();
+            else{
+           this.userID=userId;
+           return Taskas.Where(i=>i.Id==userId).ToList();
+            }
+        
+        } 
+        public  task Get(int id) => Taskas.FirstOrDefault(p => p.IdTask == id );
         public  void Add(task mytask)
         {
-            mytask.Id = Taskas.Count() + 1;
+            mytask.Id = this.userID;
+            getmaxvalue();
+            mytask.IdTask=count+1;
             Taskas.Add(mytask);
             saveToFile();
         }
@@ -54,15 +74,25 @@ namespace Task.Services
             Taskas.Remove(myTask);
             saveToFile();
         }
-        public  void Update(task myTask)
+         public void Update(task item)
         {
-            var index = Taskas.FindIndex(p => p.Id == myTask.Id);
+            var index = Taskas.FindIndex(i => i.IdTask == item.IdTask);
             if(index == -1)
                 return;
 
-            Taskas[index] = myTask;
-            
+            Taskas[index] = item;
+            saveToFile();
         }
+        // public  void Update(task myTask)
+        // {
+        //      var index = Taskas.FindIndex(i => i.IdTask == myTask.IdTask);
+        //     if(index == -1)
+        //         return;
+
+        //     Taskas[index] = myTask;
+        //     saveToFile();
+            
+        // }
     
      public  int Count => Taskas.Count();
 

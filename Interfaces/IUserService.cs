@@ -13,5 +13,6 @@ namespace Task.Interfaces
         user IsExist(user user);
 
         int Count {get;}
+        int findId(string name, string password);
     }
 }

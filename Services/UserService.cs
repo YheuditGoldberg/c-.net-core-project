@@ -1,7 +1,3 @@
-// using System.Collections.Generic;
-// using System.Linq;
-// using Task.Models;
-// ///
 using User.Models;
 using Task.Interfaces;
 using System.Collections.Generic;
@@ -67,6 +63,11 @@ namespace Task.Services
         public user IsExist(user user) 
         {
             return(Users.FirstOrDefault(u => u.Name == user.Name && u.Password == user.Password));
+        }
+     public int findId(string name, string password)
+        {
+            var idUser = Users.FirstOrDefault(u => u.Name.Equals(name) && u.Password.Equals(password));
+            return idUser.Id;
         }
     }
    

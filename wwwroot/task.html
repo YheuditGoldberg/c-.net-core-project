@@ -1,0 +1,67 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/task.css">
+    <title>Task</title>
+</head>
+<body>
+    <h1>---My Task---</h1>
+    <h2>All My Task</h2>
+   <script src="js/task.js"></script> 
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/task.css">
+    <title>Content</title>
+</head>
+
+<body>
+    <h1>---My Task---</h1>
+
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-name" placeholder="New Task" style="border-radius: 10px;height: 20px;text-align: center;">
+        <input type="submit" value="Add" style="border-radius: 10px;background-color:rgb(245, 45, 128) ;">
+    </form>
+
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateItem()">
+            <input type="hidden" id="edit-id">
+            <input type="checkbox" id="edit-isDo" >
+            <input type="text" id="edit-name" style="border-radius: 10px;height: 20px;text-align: center;">
+            <input type="submit" value="Save" style="border-radius: 10px;background-color:rgb(245, 45, 128) ;">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter" ></p>
+
+    <table style="border-radius: 20px;border: solid 3px black;padding: 50px 50px 50px 50px;margin-left: 35%;">
+        <tr>
+            <th style=" color: rgb(245, 45, 128);font-size: x-large;">Is do? |</th>
+            <th style=" color: rgb(245, 45, 128);font-size: x-large;">Task name: |</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <!-- שינוי מ toDoItems לitems כדי שיהיה זהה לג'אווה סקריפט בשורה 2 -->
+        <tbody id="items" ></tbody>
+        <div id="container" ></div>
+    </table>
+<h1>good luck!!!</h1>
+    <script src="js/task.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getItems(sessionStorage.getItem("token"));
+    </script>
+</body>
+
+</html>

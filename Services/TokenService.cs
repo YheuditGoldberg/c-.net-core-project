@@ -11,12 +11,12 @@ using Task.Interfaces;
 
 namespace Task.Services
 {
-    public class TokenService //: ITokenService
+    public static class TokenService //: ITokenService
     {
         private static SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ"));
         private static string issuer = "https://fbi-demo.com";
 
-        public SecurityToken GetToken(List<Claim> claims) =>
+        public static SecurityToken GetToken(List<Claim> claims) =>
             new JwtSecurityToken(
                 issuer,
                 issuer,
@@ -25,7 +25,7 @@ namespace Task.Services
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
             );
 
-        public TokenValidationParameters GetTokenValidationParameters() =>
+        public static TokenValidationParameters GetTokenValidationParameters() =>
             new TokenValidationParameters
             {
                 ValidIssuer = issuer,
@@ -34,7 +34,19 @@ namespace Task.Services
                 ClockSkew = TimeSpan.Zero // remove delay of token when expire
             };
 
-        public string WriteToken(SecurityToken token) =>
+        public static string WriteToken(SecurityToken token) =>
             new JwtSecurityTokenHandler().WriteToken(token);
+        public static int ReadToken(string token){
+        var handler = new JwtSecurityTokenHandler();
+            var decodedValue = handler.ReadJwtToken(token) as JwtSecurityToken;
+            var id = int.Parse(decodedValue.Claims.First(claim => claim.Type == "Id").Value);
+            return id;
+        }
+
+        internal static int decode(string token)
+        {
+            throw new NotImplementedException();
+        }
     }
+
 }

@@ -7,7 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace Task.Interfaces
 {
-    public interface ITokenService
+    public  interface ITokenService
     {
         
         SecurityToken GetToken(List<Claim> claims);

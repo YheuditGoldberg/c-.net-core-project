@@ -5,7 +5,7 @@ namespace Task.Interfaces
 {
     public interface ITaskService
     {
-        List<task> GetAll();
+        List<task> GetAll(int id);
         task Get(int id);
         void Add(task myTask);
         void Delete(int id);
