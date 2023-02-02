@@ -16,7 +16,8 @@ namespace Task.Services
 {
     public class TaskService:ITaskService
     {
-        List<task> Taskas { get; }
+         List<task>  Taskas { get; }
+        static int fromdelete;
         static int count=0;
         private  void getmaxvalue(){
         int max=0;
@@ -42,6 +43,7 @@ namespace Task.Services
                 });
             }
         }
+       
 
         private void saveToFile()
         {
@@ -72,6 +74,15 @@ namespace Task.Services
                 return;
 
             Taskas.Remove(myTask);
+            saveToFile();
+        }
+        public  void DeleteAllTaskUser(int id)//פעולה שמקבלת ID של USER ומוחקת את כל המשימות שלו
+        {
+            for(int i = 0; i <Taskas.Count(); i++){
+                if(Taskas[i].Id==id){
+                   Taskas.Remove(Taskas[i]);
+                }
+            }
             saveToFile();
         }
          public void Update(task item)

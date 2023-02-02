@@ -12,8 +12,9 @@ namespace Task.Services
 {
     public class UserService : IUserService
     {
+        
         List<user> Users { get; }
-         static int count=0;
+        static int count=0;
         private  void getmaxvalue(){
         int max=0;
         foreach(var i in Users){
@@ -56,7 +57,9 @@ namespace Task.Services
             var myUser = Get(id);
             if (myUser is null)
                 return;
-
+            int idusertask=myUser.Id;
+           // TaskService.fromdelete.DeleteAllTaskUser()
+           // t.DeleteAllTaskUser(id);
             Users.Remove(myUser);
             saveToFile();
         }

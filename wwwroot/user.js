@@ -85,6 +85,7 @@ const addUser = () => {
         .catch(error => console.error('Unable to add user.', error));
 }
 const deleteUser = (id) => {
+    debugger
     fetch(`${userUri}/${id}`, {
             method: 'DELETE',
             headers: {

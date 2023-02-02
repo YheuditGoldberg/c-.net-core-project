@@ -7,15 +7,22 @@
     <link rel="stylesheet" href="css/index.css">
     <title>Login</title>
 </head>
-<body>
-        <h1>Login</h1>
+<body style="background-image: url(f.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: fixed;
+background-attachment: fixed;">
+<h1>---My to-do list---</h1>
+        <h2>Login</h2>
         <form action="javascript:void(0);" method="POST" onsubmit="Login()">
             <input type="text" id="add-name" placeholder="name">
             <input type="password" id="add-password" placeholder="password">
             <input type="submit" value="Add" id="Add">
         </form>
-        <a href="user.html"><button id="userButton">users</button></a>
-        <a href="task.html"><button id="itemButton">items</button></a>
+        <div style="display: flex;margin-left: 33%;margin-top: 50px;">
+        <a href="user.html"><button id="userButton" style="margin-right: 70px; height: 100px;width: 200px;font-size: xx-large;color: white;border-radius: 50px;">users</button></a>
+        <a href="task.html"><button id="itemButton" style=" height: 100px;width: 200px;font-size: xx-large;color: white;border-radius: 50px;">items</button></a>
+    </div>
     <script src="js/index.js"></script>
 </body>
 </html>

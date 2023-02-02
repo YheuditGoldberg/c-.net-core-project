@@ -27,7 +27,7 @@ namespace User.Controllers
         public UserController(IUserService UserService)
         {
             this.UserService = UserService;
-            // this.VTokenService=ToDoTokenService;
+    
         }
         [HttpGet]
         [Authorize(Policy = "Admin")]
@@ -66,11 +66,7 @@ namespace User.Controllers
                    
                
                
-                };
-
-                // var token = TokenService.GetToken(claims);
-
-                // return new OkObjectResult(TokenService.WriteToken(token));                      
+                };                     
             }
 
             else
@@ -89,43 +85,11 @@ namespace User.Controllers
              var token = TokenService.GetToken(claims);
              CurrentUser=User;
                 return new OkObjectResult(TokenService.WriteToken(token));
-            // var claims = new List<Claim>();
-            // user login = UserService.Get(User.Id);
-            // if (login.IsAdmin)
-            // {
-            //     claims.Add(
-            //         new Claim("type", "Admin")
-            //     );
-            // }
-            // else
-            // {
-            //     claims.Add(
-            //         new Claim("type", "User")
-            //     );
-            // }
-            // var token = TokenService.GetToken(claims);
-            // return new OkObjectResult(TokenService.WriteToken(token));
-
-            // var dt = DateTime.Now;
-
-            // if (User.Username != "Wray"
-            // || User.Password != $"W{dt.Year}#{dt.Day}!")
-            // {
-            //     return Unauthorized();
-            // }
-
-            // var claims = new List<Claim>
-            // {
-            //     new Claim("type", "Admin"),
-            // };
-
-            // var token = TokenService.GetToken(claims);
-
-            // return new OkObjectResult(FbiTokenService.WriteToken(token));
+          
         }
         [HttpPost]
 
-        //[Authorize(Policy = "Admin")]
+        [Authorize(Policy = "Admin")]
         public IActionResult Create(user myUser)
         {
             UserService.Add(myUser);
