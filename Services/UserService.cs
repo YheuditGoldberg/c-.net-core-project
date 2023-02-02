@@ -58,6 +58,8 @@ namespace Task.Services
             if (myUser is null)
                 return;
             int idusertask=myUser.Id;
+            TaskService toDoService = new TaskService(this.webHost);
+            toDoService.DeleteAll(id);
             Users.Remove(myUser);
             saveToFile();
         }
