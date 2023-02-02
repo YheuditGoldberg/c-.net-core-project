@@ -39,19 +39,7 @@ namespace Task.Services
                 });
             }
         }
-       public TaskService(){
-        // this.webHost = webHost;
-        //     this.filePath = Path.Combine(webHost.ContentRootPath, "Data", "Task.json");
-        //     using (var jsonFile = File.OpenText(filePath))
-        //     {
-        //         Taskas = JsonSerializer.Deserialize<List<task>>(jsonFile.ReadToEnd(),
-        //         new JsonSerializerOptions
-        //         {
-        //             PropertyNameCaseInsensitive = true
-        //         });
-        //     }
-       }
-
+      
         private void saveToFile()
         {
             File.WriteAllText(filePath, JsonSerializer.Serialize(Taskas));
@@ -83,15 +71,7 @@ namespace Task.Services
             Taskas.Remove(myTask);
             saveToFile();
         }
-        // public  void DeleteAllTaskUser(int id)//פעולה שמקבלת ID של USER ומוחקת את כל המשימות שלו
-        // {
-        //     for(int i = 0; i <Taskas.Count(); i++){
-        //         if(Taskas[i].Id==id){
-        //            Taskas.Remove(Taskas[i]);
-        //         }
-        //     }
-        //     saveToFile();
-        // }
+    
          public void DeleteAll(int userId)
         {
             foreach (var item in Taskas.ToList()) {
