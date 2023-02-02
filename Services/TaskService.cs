@@ -1,7 +1,3 @@
-// using System.Collections.Generic;
-// using System.Linq;
-// using Task.Models;
-// ///
 using Task.Models;
 using Task.Interfaces;
 using System.Collections.Generic;
@@ -94,17 +90,7 @@ namespace Task.Services
             Taskas[index] = item;
             saveToFile();
         }
-        // public  void Update(task myTask)
-        // {
-        //      var index = Taskas.FindIndex(i => i.IdTask == myTask.IdTask);
-        //     if(index == -1)
-        //         return;
-
-        //     Taskas[index] = myTask;
-        //     saveToFile();
-            
-        // }
-    
+      
      public  int Count => Taskas.Count();
 
     }

@@ -4,10 +4,6 @@ function getItems(token) {
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer " + token);
     myHeaders.append("Content-Type", "application/json");
-    // var raw = JSON.stringify({
-    //     Name: sessionStorage.getItem("name"),
-    //     Password: sessionStorage.getItem("password")
-    // });
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
@@ -16,7 +12,6 @@ function getItems(token) {
 
     fetch("/Task", requestOptions)
         .then(response => response.json())
-        // .then(data => _displayItems(data))
         .then(result=>{_displayItems(result);taskas=result})
         .catch(error => console.log('error', error));
 }
@@ -98,7 +93,7 @@ const updateItem = () => {
         .then(() => getItems(sessionStorage.getItem("token")))
         .catch(error => console.error('Unable to update item.', error));
 
-    //closeInput();
+    closeInput();
 
     return false;
 }

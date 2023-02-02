@@ -58,8 +58,6 @@ namespace Task.Services
             if (myUser is null)
                 return;
             int idusertask=myUser.Id;
-           // TaskService.fromdelete.DeleteAllTaskUser()
-           // t.DeleteAllTaskUser(id);
             Users.Remove(myUser);
             saveToFile();
         }

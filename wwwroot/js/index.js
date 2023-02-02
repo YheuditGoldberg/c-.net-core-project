@@ -38,7 +38,6 @@ function Login() {
             }
              else {
                 token = result;
-                // alert(token);
                 sessionStorage.setItem("token", token)
                 if (a === 'Admin'&& b === '123') {
                     u.style.display = 'block';

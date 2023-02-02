@@ -9,14 +9,12 @@ using System.Linq;
 using System;
 using System.Text.Json;
 using System.Text;
-
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 
 namespace User.Controllers
 {
     [ApiController]
-    // [Route("/user")]
     [Route("User")]
     public class UserController : ControllerBase
     {
