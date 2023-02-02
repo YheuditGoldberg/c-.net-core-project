@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Content</title>
 </head>
+
 <body>
-    
+    <h1>Users CRUD</h1>
+    <div class="postman-run-button"
+    data-postman-action="collection/fork"
+    data-postman-var-1="25644736-9bc08cd1-b7f3-4e16-83d8-72f4b821273c"
+    data-postman-collection-url="entityId=25644736-9bc08cd1-b7f3-4e16-83d8-72f4b821273c&entityType=collection&workspaceId=e2bb7be3-c410-4e0a-8163-ced6c0048e3b"></div>
+    <script type="text/javascript">
+      (function (p,o,s,t,m,a,n) {
+        !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+        !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
+          (n = o.createElement("script")),
+          (n.id = s+t), (n.async = 1), (n.src = m), n
+        ));
+      }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+    </script>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addUser()">
+        <input type="text" id="add-name" placeholder="New User">
+        <input type="password" id="add-password" placeholder="password">
+        <input type="submit" value="Add">
+    </form>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>User name</th>
+            <th>User password</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <!-- שינוי מ toDoItems לitems כדי שיהיה זהה לג'אווה סקריפט בשורה 2 -->
+        <tbody id="users"></tbody>
+    </table>
+
+    <script src="user.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getUsers();
+    </script>
 </body>
+
 </html>

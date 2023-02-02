@@ -13,6 +13,15 @@ namespace Task.Services
     public class UserService : IUserService
     {
         List<user> Users { get; }
+         static int count=0;
+        private  void getmaxvalue(){
+        int max=0;
+        foreach(var i in Users){
+        if(i.Id>max)
+        max=i.Id;
+        }
+          count=max+1;
+        }
         private IWebHostEnvironment webHost;
         private string filePath;
         public UserService(IWebHostEnvironment webHost)
@@ -37,7 +46,8 @@ namespace Task.Services
         public user Get(int id) => Users.FirstOrDefault(p => p.Id == id);
         public void Add(user myUser)
         {
-            myUser.Id = Users.Count() + 1;
+            getmaxvalue();
+            myUser.Id = count+1;
             Users.Add(myUser);
             saveToFile();
         }

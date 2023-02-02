@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zSmlIgWX5qC1qgUGuwvSpZux5m6PelgBCThlby6DrIk=",
+  "Hash": "U6Wp+dUbWbKv/YuAhrRx4b8xK+qTFxxXjPK1y7+ijWs=",
   "Source": "Task",
   "BasePath": "_content/Task",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\task.css"
+    },
+    {
+      "Identity": "C:\\Users\\1\\Desktop\\י''ד\\hw\\wwwroot\\css\\user.css",
+      "SourceId": "Task",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1\\Desktop\\י''ד\\hw\\wwwroot\\",
+      "BasePath": "_content/Task",
+      "RelativePath": "css/user.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\user.css"
     },
     {
       "Identity": "C:\\Users\\1\\Desktop\\י''ד\\hw\\wwwroot\\data\\task.json",
@@ -119,23 +136,6 @@
       "OriginalItemSpec": "wwwroot\\js\\task.js"
     },
     {
-      "Identity": "C:\\Users\\1\\Desktop\\י''ד\\hw\\wwwroot\\js\\user.js",
-      "SourceId": "Task",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\1\\Desktop\\י''ד\\hw\\wwwroot\\",
-      "BasePath": "_content/Task",
-      "RelativePath": "js/user.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\user.js"
-    },
-    {
       "Identity": "C:\\Users\\1\\Desktop\\י''ד\\hw\\wwwroot\\task.html",
       "SourceId": "Task",
       "SourceType": "Discovered",
@@ -168,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user.html"
+    },
+    {
+      "Identity": "C:\\Users\\1\\Desktop\\י''ד\\hw\\wwwroot\\user.js",
+      "SourceId": "Task",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\1\\Desktop\\י''ד\\hw\\wwwroot\\",
+      "BasePath": "_content/Task",
+      "RelativePath": "user.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user.js"
     }
   ]
 }
